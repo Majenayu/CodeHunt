@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CODE HUNT 2K26 | National Level Inter-College Competition</title>
+    <meta name="description"
+        content="CODEHUNT 2K26 — National-level inter-college competition organized by Department of CSE (AIML), Vidyavardhaka College of Engineering, Mysuru. 06 March 2026.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Particle Canvas -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Full-Screen Robot Background -->
+    <div class="robot-bg" id="robotBg">
+        <div class="css-robot" id="cssRobot">
+            <div class="robot-antenna">
+                <div class="antenna-tip"></div>
+                <div class="antenna-wire"></div>
+            </div>
+            <div class="robot-head">
+                <div class="robot-eye left"></div>
+                <div class="robot-eye right"></div>
+                <div class="robot-mouth"></div>
+            </div>
+            <div class="robot-neck"></div>
+            <div class="robot-body">
+                <div class="robot-chest-light"></div>
+                <div class="robot-panel left-panel"></div>
+                <div class="robot-panel right-panel"></div>
+            </div>
+            <div class="robot-arms">
+                <div class="robot-arm left-arm"></div>
+                <div class="robot-arm right-arm"></div>
+            </div>
+            <div class="robot-legs">
+                <div class="robot-leg left-leg"></div>
+                <div class="robot-leg right-leg"></div>
+            </div>
+        </div>
+        <div class="robot-bg-overlay"></div>
+    </div>
+
+    <!-- Scanline Overlay -->
+    <div class="scanline-overlay"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-inner">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-icon">⟨/⟩</span>
+                <div class="logo-text-group">
+                    <span class="logo-main">CODEHUNT</span>
+                    <span class="logo-sub">2K26</span>
+                </div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#schedule" class="nav-link">Schedule</a></li>
+                <li><a href="#details" class="nav-link">Details</a></li>
+                <li><a href="#register" class="nav-link cta-link">Register — ₹100</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge slide-up">
+                    <i class="fas fa-bolt"></i> NATIONAL LEVEL INTER-COLLEGE COMPETITION
+                </div>
+                <h1 class="hero-title slide-up delay-1">
+                    <span class="title-line">CODE</span>
+                    <span class="title-line accent">HUNT</span>
+                    <span class="title-line year">2K26</span>
+                </h1>
+                <p class="hero-tagline slide-up delay-2">
+                    <span class="typed-text">"INNOVATE, CREATE & COMPETE"</span>
+                </p>
+                <div class="hero-stats slide-up delay-3">
+                    <div class="stat-card">
+                        <i class="fas fa-calendar-alt"></i>
+                        <div><strong>06 MARCH 2026</strong><span>Thursday</span></div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div><strong>M Block Lab</strong><span>Seminar Hall, VVCE</span></div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-clock"></i>
+                        <div><strong>8:30 AM</strong><span>Onwards</span></div>
+                    </div>
+                </div>
+                <div class="hero-highlights slide-up delay-3">
+                    <div class="highlight-pill"><i class="fas fa-trophy"></i> ₹15,000 Prize Pool</div>
+                    <div class="highlight-pill"><i class="fas fa-ticket-alt"></i> ₹100 Entry Fee</div>
+                    <div class="highlight-pill"><i class="fas fa-users"></i> 1-2 Members/Team</div>
+                </div>
+                <div class="hero-cta slide-up delay-4">
+                    <a href="https://forms.gle/YOUR_GOOGLE_FORM_ID" target="_blank" rel="noopener noreferrer"
+                        class="btn-primary">
+                        <span>Register Now</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#schedule" class="btn-outline">View Schedule</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section id="about" class="section about-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">// ABOUT THE EVENT</span>
+                <h2 class="section-title">The Ultimate <span class="accent">Code Battle</span></h2>
+                <p class="section-subtitle">Organized by the Department of CSE (Artificial Intelligence and Machine
+                    Learning Engineering), Vidyavardhaka College of Engineering, Mysuru.</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card reveal-card" data-delay="0">
+                    <div class="card-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>Innovate</h3>
+                    <p>Push the boundaries of your knowledge in AI, ML, and problem-solving through diverse competitive
+                        rounds.</p>
+                    <div class="card-number">01</div>
+                </div>
+                <div class="about-card reveal-card" data-delay="1">
+                    <div class="card-icon"><i class="fas fa-code"></i></div>
+                    <h3>Create</h3>
+                    <p>From quizzes to treasure hunts to final coding showdowns — demonstrate your skills across
+                        multiple arenas.</p>
+                    <div class="card-number">02</div>
+                </div>
+                <div class="about-card reveal-card" data-delay="2">
+                    <div class="card-icon"><i class="fas fa-trophy"></i></div>
+                    <h3>Compete</h3>
+                    <p>Battle it out with the brightest minds from colleges nationwide. Top teams advance to the
+                        grand finale!</p>
+                    <div class="card-number">03</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SCHEDULE ========== -->
+    <section id="schedule" class="section schedule-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">// EVENT TIMELINE</span>
+                <h2 class="section-title">Full Day <span class="accent">Schedule</span></h2>
+                <p class="section-subtitle">06 March 2026 — A packed day of competition, learning, and fun.</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item reveal-card" data-delay="0">
+                    <div class="timeline-marker"><span>✓</span></div>
+                    <div class="timeline-content">
+                        <div class="timeline-time-badge">8:30 AM — 9:00 AM</div>
+                        <h3>Spot Verification</h3>
+                        <p>Report to the venue, get your spot verified and receive your team pass.</p>
+                        <span class="timeline-venue"><i class="fas fa-map-pin"></i> Placement / Sports Complex</span>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-card" data-delay="1">
+                    <div class="timeline-marker"><span>🎤</span></div>
+                    <div class="timeline-content">
+                        <div class="timeline-time-badge">9:00 AM — 9:45 AM</div>
+                        <h3>Inauguration & Rules Explanation</h3>
+                        <p>Official ceremony, chief guest address, and detailed walkthrough of all competition rules.
+                        </p>
+                        <span class="timeline-venue"><i class="fas fa-map-pin"></i> Seminar Hall</span>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-card" data-delay="2">
+                    <div class="timeline-marker"><span>🧠</span></div>
+                    <div class="timeline-content">
+                        <div class="timeline-time-badge">10:00 AM — 10:30 AM</div>
+                        <h3>Round 1 — Quiz</h3>
+                        <p>Test your aptitude, logical reasoning, and technical knowledge in this fast-paced quiz round.
+                        </p>
+                        <span class="timeline-venue"><i class="fas fa-map-pin"></i> Seminar Hall</span>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-card" data-delay="3">
+                    <div class="timeline-marker"><span>🗺️</span></div>
+                    <div class="timeline-content">
+                        <div class="timeline-time-badge">10:30 AM — 1:30 PM</div>
+                        <h3>Round 2 — Treasure Hunt</h3>
+                        <p>An exciting campus-wide treasure hunt! Follow clues, solve puzzles, and race against time
+                            across the entire campus.</p>
+                        <span class="timeline-venue"><i class="fas fa-map-pin"></i> All Over Campus</span>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-card" data-delay="4">
+                    <div class="timeline-marker"><span>🍽️</span></div>
+                    <div class="timeline-content">
+                        <div class="timeline-time-badge">1:30 PM — 2:30 PM</div>
+                        <h3>Lunch Break</h3>
+                        <p>Recharge and refuel for the final rounds.</p>
+                        <span class="timeline-venue"><i class="fas fa-map-pin"></i> TBD</span>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-card" data-delay="5">
+                    <div class="timeline-marker"><span>📢</span></div>
+                    <div class="timeline-content">
+                        <div class="timeline-time-badge">2:30 PM — 2:45 PM</div>
+                        <h3>Finalist Announcements</h3>
+                        <p>The top teams who survived the quiz and treasure hunt are announced!</p>
+                        <span class="timeline-venue"><i class="fas fa-map-pin"></i> Seminar Hall</span>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-card" data-delay="6">
+                    <div class="timeline-marker"><span>💻</span></div>
+                    <div class="timeline-content">
+                        <div class="timeline-time-badge">2:45 PM — 3:45 PM</div>
+                        <h3>Final Round — Top Teams</h3>
+                        <p>The ultimate showdown! Top teams compete head-to-head in a high-pressure coding challenge
+                            in the M Block Labs.</p>
+                        <span class="timeline-venue"><i class="fas fa-map-pin"></i> M Block Labs 309/310</span>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-card" data-delay="7">
+                    <div class="timeline-marker"><span>🏆</span></div>
+                    <div class="timeline-content">
+                        <div class="timeline-time-badge">4:00 PM — 4:30 PM</div>
+                        <h3>Prize Distribution & Valedictory</h3>
+                        <p>Awards ceremony, certificates distribution, and closing remarks by the convenor.</p>
+                        <span class="timeline-venue"><i class="fas fa-map-pin"></i> Seminar Hall</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== DETAILS ========== -->
+    <section id="details" class="section details-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">// EVENT DETAILS</span>
+                <h2 class="section-title">Everything You <span class="accent">Need to Know</span></h2>
+            </div>
+            <div class="details-layout">
+                <div class="detail-block reveal-card" data-delay="0">
+                    <div class="detail-icon"><i class="fas fa-university"></i></div>
+                    <h3>College</h3>
+                    <p>Vidyavardhaka College of Engineering</p>
+                    <span class="detail-meta">Autonomous Institute, Affiliated to VTU, Belagavi<br>Accredited by NBA &
+                        NAAC with A Grade<br>P.B.No.206, Gokulam III Stage, Mysuru - 570 002</span>
+                </div>
+                <div class="detail-block reveal-card" data-delay="1">
+                    <div class="detail-icon"><i class="fas fa-indian-rupee-sign"></i></div>
+                    <h3>Registration Fee</h3>
+                    <p>₹100 per team</p>
+                    <span class="detail-meta">Team of 1 or 2 members<br>Spot registration available</span>
+                </div>
+                <div class="detail-block reveal-card" data-delay="2">
+                    <div class="detail-icon"><i class="fas fa-trophy"></i></div>
+                    <h3>Prize Pool — ₹15,000</h3>
+                    <p>Cash prizes for top performers</p>
+                    <span class="detail-meta">Exciting cash prizes await the winners!</span>
+                </div>
+                <div class="detail-block reveal-card" data-delay="3">
+                    <div class="detail-icon"><i class="fas fa-user-tie"></i></div>
+                    <h3>Convenor</h3>
+                    <p>Dr. Aditya C R</p>
+                    <span class="detail-meta">HOD, CSE (AIML)</span>
+                </div>
+                <div class="detail-block reveal-card" data-delay="4">
+                    <div class="detail-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <h3>Faculty Coordinator</h3>
+                    <p>Dr. Vijay C P</p>
+                    <span class="detail-meta">Department of CSE (AIML)</span>
+                </div>
+                <div class="detail-block reveal-card" data-delay="7">
+                    <div class="detail-icon"><i class="fas fa-users"></i></div>
+                    <h3>Who Can Participate?</h3>
+                    <p>All College Students</p>
+                    <span class="detail-meta">Open to any branch/department<br>Inter-college participants
+                        welcome<br>Carry valid college ID</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== REGISTRATION ========== -->
+    <section id="register" class="section register-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">// JOIN THE HUNT</span>
+                <h2 class="section-title">Register <span class="accent">Now</span></h2>
+                <p class="section-subtitle">Registration Fee: ₹100 | Team Size: 1-2 Members | Limited Seats!</p>
+            </div>
+            <div class="register-card register-redirect">
+                <div class="register-redirect-content">
+                    <div class="register-icon-large">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="register-heading">Ready to Compete?</h3>
+                    <p class="register-desc">Click the button below to fill out the official registration form on Google
+                        Forms. It only takes a minute!</p>
+                    <a href="https://forms.gle/YOUR_GOOGLE_FORM_ID" target="_blank" rel="noopener noreferrer"
+                        class="btn-submit register-btn-google">
+                        <i class="fas fa-external-link-alt"></i>
+                        Register via Google Form — ₹100
+                    </a>
+                    <span class="register-hint"><i class="fas fa-info-circle"></i> You will be redirected to Google
+                        Forms</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="section-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="footer-logo">⟨/⟩ CODEHUNT 2K26</span>
+                    <p>Department of CSE (AIML)<br>Vidyavardhaka College of Engineering<br>Gokulam III Stage, Mysuru -
+                        570 002, Karnataka</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#about">About Event</a>
+                    <a href="#schedule">Schedule</a>
+                    <a href="#details">Event Details</a>
+                    <a href="#register">Registration</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Organizers</h4>
+                    <p><i class="fas fa-user-tie"></i> Dr. Aditya C R — Convenor (HOD, AIML)</p>
+                    <p><i class="fas fa-chalkboard-teacher"></i> Dr. Vijay C P — Faculty Coordinator</p>
+                    <p><i class="fas fa-people-group"></i> Dedicated Student Team</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CODEHUNT | CSE (AIML), VVCE Mysuru. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toastContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
