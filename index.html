@@ -14,9 +14,23 @@
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 
 <body>
+
+    <!-- Premium Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loader-content">
+            <div class="loader-logo-ring">
+                <canvas id="loaderLogoCanvas" width="120" height="120"></canvas>
+            </div>
+            <div class="loader-text">CODEHUNT<span>2K26</span></div>
+            <div class="loader-bar">
+                <div class="loader-bar-fill"></div>
+            </div>
+        </div>
+    </div>
 
     <!-- Particle Canvas -->
     <canvas id="particleCanvas"></canvas>
@@ -58,10 +72,12 @@
     <nav id="navbar">
         <div class="nav-inner">
             <a href="#hero" class="nav-logo">
-                <span class="logo-icon">⟨/⟩</span>
+                <div class="nav-dept-logo">
+                    <canvas id="navLogoCanvas" width="44" height="44"></canvas>
+                </div>
                 <div class="logo-text-group">
                     <span class="logo-main">CODEHUNT</span>
-                    <span class="logo-sub">2K26</span>
+                    <span class="logo-sub">2K26 · CSE (AIML)</span>
                 </div>
             </a>
             <ul class="nav-links" id="navLinks">
@@ -85,11 +101,17 @@
                 <div class="hero-badge slide-up">
                     <i class="fas fa-bolt"></i> NATIONAL LEVEL INTER-COLLEGE COMPETITION
                 </div>
+                <!-- 3D Department Logo -->
+                <div class="hero-3d-logo slide-up delay-1" id="hero3DLogoMount">
+                </div>
                 <h1 class="hero-title slide-up delay-1">
                     <span class="title-line">CODE</span>
                     <span class="title-line accent">HUNT</span>
                     <span class="title-line year">2K26</span>
                 </h1>
+                <p class="hero-dept-label slide-up delay-2">
+                    <span>Department of CSE (AI & ML)</span>
+                </p>
                 <p class="hero-tagline slide-up delay-2">
                     <span class="typed-text">"INNOVATE, CREATE & COMPETE"</span>
                 </p>
@@ -100,7 +122,7 @@
                     </div>
                     <div class="stat-card">
                         <i class="fas fa-map-marker-alt"></i>
-                        <div><strong>M Block Lab</strong><span>Seminar Hall, VVCE</span></div>
+                        <div><strong>?? (TBC)</strong><span>VVCE, Mysuru</span></div>
                     </div>
                     <div class="stat-card">
                         <i class="fas fa-clock"></i>
@@ -108,12 +130,12 @@
                     </div>
                 </div>
                 <div class="hero-highlights slide-up delay-3">
-                    <div class="highlight-pill"><i class="fas fa-trophy"></i> ₹15,000 Prize Pool</div>
+                    <div class="highlight-pill"><i class="fas fa-trophy"></i> ₹12,000 Prize Pool</div>
                     <div class="highlight-pill"><i class="fas fa-ticket-alt"></i> ₹100 Entry Fee</div>
-                    <div class="highlight-pill"><i class="fas fa-users"></i> 1-2 Members/Team</div>
+                    <div class="highlight-pill"><i class="fas fa-users"></i> 2 Members/Team</div>
                 </div>
                 <div class="hero-cta slide-up delay-4">
-                    <a href="https://forms.gle/YOUR_GOOGLE_FORM_ID" target="_blank" rel="noopener noreferrer"
+                    <a href="https://forms.gle/NyjmV6L8ZtHkcANY6" target="_blank" rel="noopener noreferrer"
                         class="btn-primary">
                         <span>Register Now</span>
                         <i class="fas fa-arrow-right"></i>
@@ -180,7 +202,7 @@
                         <div class="timeline-time-badge">8:30 AM — 9:00 AM</div>
                         <h3>Spot Verification</h3>
                         <p>Report to the venue, get your spot verified and receive your team pass.</p>
-                        <span class="timeline-venue"><i class="fas fa-map-pin"></i> Placement / Sports Complex</span>
+                        <span class="timeline-venue"><i class="fas fa-map-pin"></i> ?? (Venue TBC)</span>
                     </div>
                 </div>
                 <div class="timeline-item reveal-card" data-delay="1">
@@ -190,68 +212,66 @@
                         <h3>Inauguration & Rules Explanation</h3>
                         <p>Official ceremony, chief guest address, and detailed walkthrough of all competition rules.
                         </p>
-                        <span class="timeline-venue"><i class="fas fa-map-pin"></i> Seminar Hall</span>
+                        <span class="timeline-venue"><i class="fas fa-map-pin"></i> ?? (Venue TBC)</span>
+                        <div class="timeline-marker"><span>🧠</span></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time-badge">10:00 AM — 11:00 AM</div>
+                            <h3>Round 1 — Quiz</h3>
+                            <p>Test your aptitude, logical reasoning, and technical knowledge in this fast-paced quiz
+                                round.
+                            </p>
+                            <span class="timeline-venue"><i class="fas fa-map-pin"></i> ?? (Venue TBC)</span>
+                        </div>
                     </div>
-                </div>
-                <div class="timeline-item reveal-card" data-delay="2">
-                    <div class="timeline-marker"><span>🧠</span></div>
-                    <div class="timeline-content">
-                        <div class="timeline-time-badge">10:00 AM — 10:30 AM</div>
-                        <h3>Round 1 — Quiz</h3>
-                        <p>Test your aptitude, logical reasoning, and technical knowledge in this fast-paced quiz round.
-                        </p>
-                        <span class="timeline-venue"><i class="fas fa-map-pin"></i> Seminar Hall</span>
+                    <div class="timeline-item reveal-card" data-delay="3">
+                        <div class="timeline-marker"><span>🗺️</span></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time-badge">11:00 AM — 1:30 PM</div>
+                            <h3>Round 2 — Treasure Hunt</h3>
+                            <p>An exciting campus-wide treasure hunt! Follow clues, solve puzzles, and race against time
+                                across the entire campus.</p>
+                            <span class="timeline-venue"><i class="fas fa-map-pin"></i> ?? (Venue TBC)</span>
+                        </div>
                     </div>
-                </div>
-                <div class="timeline-item reveal-card" data-delay="3">
-                    <div class="timeline-marker"><span>🗺️</span></div>
-                    <div class="timeline-content">
-                        <div class="timeline-time-badge">10:30 AM — 1:30 PM</div>
-                        <h3>Round 2 — Treasure Hunt</h3>
-                        <p>An exciting campus-wide treasure hunt! Follow clues, solve puzzles, and race against time
-                            across the entire campus.</p>
-                        <span class="timeline-venue"><i class="fas fa-map-pin"></i> All Over Campus</span>
+                    <div class="timeline-item reveal-card" data-delay="4">
+                        <div class="timeline-marker"><span>🍽️</span></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time-badge">1:30 PM — 2:30 PM</div>
+                            <h3>Lunch Break</h3>
+                            <p>Recharge and refuel for the final rounds.</p>
+                            <span class="timeline-venue"><i class="fas fa-map-pin"></i> ?? (Venue TBC)</span>
+                        </div>
                     </div>
-                </div>
-                <div class="timeline-item reveal-card" data-delay="4">
-                    <div class="timeline-marker"><span>🍽️</span></div>
-                    <div class="timeline-content">
-                        <div class="timeline-time-badge">1:30 PM — 2:30 PM</div>
-                        <h3>Lunch Break</h3>
-                        <p>Recharge and refuel for the final rounds.</p>
-                        <span class="timeline-venue"><i class="fas fa-map-pin"></i> TBD</span>
+                    <div class="timeline-item reveal-card" data-delay="5">
+                        <div class="timeline-marker"><span>📢</span></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time-badge">2:30 PM</div>
+                            <h3>Finalist Announcements</h3>
+                            <p>The top teams who survived the quiz and treasure hunt are announced!</p>
+                            <span class="timeline-venue"><i class="fas fa-map-pin"></i> ?? (Venue TBC)</span>
+                        </div>
                     </div>
-                </div>
-                <div class="timeline-item reveal-card" data-delay="5">
-                    <div class="timeline-marker"><span>📢</span></div>
-                    <div class="timeline-content">
-                        <div class="timeline-time-badge">2:30 PM — 2:45 PM</div>
-                        <h3>Finalist Announcements</h3>
-                        <p>The top teams who survived the quiz and treasure hunt are announced!</p>
-                        <span class="timeline-venue"><i class="fas fa-map-pin"></i> Seminar Hall</span>
+                    <div class="timeline-item reveal-card" data-delay="6">
+                        <div class="timeline-marker"><span>💻</span></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time-badge">2:45 PM — 4:00 PM</div>
+                            <h3>Final Round — Top Teams</h3>
+                            <p>The ultimate showdown! Top teams compete head-to-head in a high-pressure coding challenge
+                                in the M Block Labs.</p>
+                            <span class="timeline-venue"><i class="fas fa-map-pin"></i> ?? (Venue TBC)</span>
+                        </div>
                     </div>
-                </div>
-                <div class="timeline-item reveal-card" data-delay="6">
-                    <div class="timeline-marker"><span>💻</span></div>
-                    <div class="timeline-content">
-                        <div class="timeline-time-badge">2:45 PM — 3:45 PM</div>
-                        <h3>Final Round — Top Teams</h3>
-                        <p>The ultimate showdown! Top teams compete head-to-head in a high-pressure coding challenge
-                            in the M Block Labs.</p>
-                        <span class="timeline-venue"><i class="fas fa-map-pin"></i> M Block Labs 309/310</span>
-                    </div>
-                </div>
-                <div class="timeline-item reveal-card" data-delay="7">
-                    <div class="timeline-marker"><span>🏆</span></div>
-                    <div class="timeline-content">
-                        <div class="timeline-time-badge">4:00 PM — 4:30 PM</div>
-                        <h3>Prize Distribution & Valedictory</h3>
-                        <p>Awards ceremony, certificates distribution, and closing remarks by the convenor.</p>
-                        <span class="timeline-venue"><i class="fas fa-map-pin"></i> Seminar Hall</span>
+                    <div class="timeline-item reveal-card" data-delay="7">
+                        <div class="timeline-marker"><span>🏆</span></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time-badge">4:00 PM — 4:30 PM</div>
+                            <h3>Prize Distribution & Valedictory</h3>
+                            <p>Awards ceremony, certificates distribution, and closing remarks by the convenor.</p>
+                            <span class="timeline-venue"><i class="fas fa-map-pin"></i> ?? (Venue TBC)</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- ========== DETAILS ========== -->
@@ -273,11 +293,12 @@
                     <div class="detail-icon"><i class="fas fa-indian-rupee-sign"></i></div>
                     <h3>Registration Fee</h3>
                     <p>₹100 per team</p>
-                    <span class="detail-meta">Team of 1 or 2 members<br>Spot registration available</span>
+                    <span class="detail-meta">Team of exactly 2 members<br>Spot registration available<br>Team size: 2
+                        members (compulsory)</span>
                 </div>
                 <div class="detail-block reveal-card" data-delay="2">
                     <div class="detail-icon"><i class="fas fa-trophy"></i></div>
-                    <h3>Prize Pool — ₹15,000</h3>
+                    <h3>Prize Pool — ₹12,000</h3>
                     <p>Cash prizes for top performers</p>
                     <span class="detail-meta">Exciting cash prizes await the winners!</span>
                 </div>
@@ -289,9 +310,20 @@
                 </div>
                 <div class="detail-block reveal-card" data-delay="4">
                     <div class="detail-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-                    <h3>Faculty Coordinator</h3>
+                    <h3>Faculty Coordinators</h3>
                     <p>Dr. Vijay C P</p>
+                    <p style="margin-top:4px">Dr. Varshitha D N</p>
                     <span class="detail-meta">Department of CSE (AIML)</span>
+                </div>
+                <div class="detail-block reveal-card" data-delay="5">
+                    <div class="detail-icon"><i class="fas fa-user-graduate"></i></div>
+                    <h3>Student Coordinators</h3>
+                    <p>P G Ayush Rai</p>
+                    <span class="detail-meta"><i class="fas fa-phone" style="margin-right:4px"></i>+91 94832
+                        46283</span>
+                    <p style="margin-top:8px">Prithvika R</p>
+                    <span class="detail-meta"><i class="fas fa-phone" style="margin-right:4px"></i>+91 90084
+                        58484</span>
                 </div>
                 <div class="detail-block reveal-card" data-delay="7">
                     <div class="detail-icon"><i class="fas fa-users"></i></div>
@@ -310,7 +342,8 @@
             <div class="section-header">
                 <span class="section-tag">// JOIN THE HUNT</span>
                 <h2 class="section-title">Register <span class="accent">Now</span></h2>
-                <p class="section-subtitle">Registration Fee: ₹100 | Team Size: 1-2 Members | Limited Seats!</p>
+                <p class="section-subtitle">Registration Fee: ₹100 | Team Size: 2 Members (Compulsory) | Limited Seats!
+                </p>
             </div>
             <div class="register-card register-redirect">
                 <div class="register-redirect-content">
@@ -320,7 +353,7 @@
                     <h3 class="register-heading">Ready to Compete?</h3>
                     <p class="register-desc">Click the button below to fill out the official registration form on Google
                         Forms. It only takes a minute!</p>
-                    <a href="https://forms.gle/YOUR_GOOGLE_FORM_ID" target="_blank" rel="noopener noreferrer"
+                    <a href="https://forms.gle/NyjmV6L8ZtHkcANY6" target="_blank" rel="noopener noreferrer"
                         class="btn-submit register-btn-google">
                         <i class="fas fa-external-link-alt"></i>
                         Register via Google Form — ₹100
@@ -337,7 +370,10 @@
         <div class="section-container">
             <div class="footer-top">
                 <div class="footer-brand">
-                    <span class="footer-logo">⟨/⟩ CODEHUNT 2K26</span>
+                    <div class="footer-logo-row">
+                        <canvas id="footerLogoCanvas" width="36" height="36"></canvas>
+                        <span class="footer-logo">CODEHUNT 2K26</span>
+                    </div>
                     <p>Department of CSE (AIML)<br>Vidyavardhaka College of Engineering<br>Gokulam III Stage, Mysuru -
                         570 002, Karnataka</p>
                 </div>
@@ -352,7 +388,9 @@
                     <h4>Organizers</h4>
                     <p><i class="fas fa-user-tie"></i> Dr. Aditya C R — Convenor (HOD, AIML)</p>
                     <p><i class="fas fa-chalkboard-teacher"></i> Dr. Vijay C P — Faculty Coordinator</p>
-                    <p><i class="fas fa-people-group"></i> Dedicated Student Team</p>
+                    <p><i class="fas fa-chalkboard-teacher"></i> Dr. Varshitha D N — Faculty Coordinator</p>
+                    <p><i class="fas fa-user-graduate"></i> P G Ayush Rai — +91 94832 46283</p>
+                    <p><i class="fas fa-user-graduate"></i> Prithvika R — +91 90084 58484</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -365,6 +403,7 @@
     <div id="toastContainer"></div>
 
     <script src="script.js"></script>
+    <script src="logo3d.js"></script>
 </body>
 
 </html>
