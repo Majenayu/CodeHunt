@@ -138,7 +138,9 @@
         var mount = document.getElementById('hero3DLogoMount');
         if (!mount || typeof THREE === 'undefined') return;
 
-        var W = 300, H = 300;
+        var mountSize = Math.min(mount.offsetWidth || 300, 300);
+        mountSize = Math.max(mountSize, 140); // minimum 140px
+        var W = mountSize, H = mountSize;
         var renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
         renderer.setClearColor(0x000000, 0);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2.5));
@@ -157,6 +159,7 @@
             borderRadius: '50%',
             width: W + 'px',
             height: H + 'px',
+            maxWidth: '100%',
             cursor: 'grab'
         });
 
