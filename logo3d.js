@@ -201,9 +201,6 @@
             if (renderer.capabilities)
                 frontTex.anisotropy = renderer.capabilities.getMaxAnisotropy();
 
-            // Back texture
-            var backTex = new THREE.CanvasTexture(buildBackCanvas());
-
             // Front face
             var frontMesh = new THREE.Mesh(
                 new THREE.CircleGeometry(coinR, 256),
@@ -216,14 +213,14 @@
             frontMesh.position.z = coinTH / 2 + 0.001;
             G.add(frontMesh);
 
-            // Back face
+            // Back face — same texture, DoubleSide so it shows from all angles
             var backMesh = new THREE.Mesh(
                 new THREE.CircleGeometry(coinR, 256),
                 new THREE.MeshStandardMaterial({
-                    map: backTex,
-                    metalness: 0.20,
-                    roughness: 0.22,
-                    side: THREE.BackSide
+                    map: frontTex,
+                    metalness: 0.05,
+                    roughness: 0.28,
+                    side: THREE.DoubleSide
                 })
             );
             backMesh.rotation.y = Math.PI;

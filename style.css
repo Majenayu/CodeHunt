@@ -2244,6 +2244,404 @@ body {
     }
 }
 
+/* ============================
+   ROUNDS / EVENT FLOW SECTION
+   ============================ */
+.rounds-section {
+    background: radial-gradient(ellipse at 50% 0%, rgba(0, 80, 180, 0.06) 0%, transparent 70%);
+}
+
+.rounds-flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.round-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--neon-cyan);
+    font-size: 1.6rem;
+    padding: 0 0.5rem;
+    opacity: 0.5;
+    flex-shrink: 0;
+    align-self: center;
+}
+
+.round-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(0, 229, 255, 0.12);
+    border-radius: 16px;
+    padding: 2rem 1.6rem;
+    flex: 1 1 220px;
+    max-width: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+    backdrop-filter: blur(10px);
+}
+
+.round-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(0, 229, 255, 0.35);
+    box-shadow: 0 12px 40px rgba(0, 229, 255, 0.1);
+}
+
+.round-card--highlight {
+    border-color: rgba(255, 200, 0, 0.25);
+    background: rgba(255, 200, 0, 0.04);
+}
+
+.round-card--highlight:hover {
+    border-color: rgba(255, 200, 0, 0.5);
+    box-shadow: 0 12px 40px rgba(255, 200, 0, 0.1);
+}
+
+.round-card--final {
+    border-color: rgba(0, 229, 255, 0.3);
+    background: rgba(0, 229, 255, 0.04);
+}
+
+.round-card--final:hover {
+    box-shadow: 0 12px 40px rgba(0, 229, 255, 0.15);
+}
+
+.round-number {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: rgba(0, 229, 255, 0.15);
+    line-height: 1;
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    letter-spacing: -2px;
+}
+
+.round-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: rgba(0, 229, 255, 0.08);
+    border: 1px solid rgba(0, 229, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: var(--neon-cyan);
+    flex-shrink: 0;
+}
+
+.round-card--highlight .round-icon {
+    background: rgba(255, 200, 0, 0.08);
+    border-color: rgba(255, 200, 0, 0.25);
+    color: #ffc800;
+}
+
+.round-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.round-venue-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.7rem;
+    color: var(--neon-cyan);
+    background: rgba(0, 229, 255, 0.08);
+    border: 1px solid rgba(0, 229, 255, 0.2);
+    border-radius: 20px;
+    padding: 0.25rem 0.7rem;
+    letter-spacing: 0.5px;
+}
+
+.round-card--highlight .round-venue-badge {
+    color: #ffc800;
+    background: rgba(255, 200, 0, 0.08);
+    border-color: rgba(255, 200, 0, 0.2);
+}
+
+.round-desc {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+    flex: 1;
+}
+
+.round-topics {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.round-topics li {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.round-topics li i {
+    color: var(--neon-cyan);
+    font-size: 0.72rem;
+    width: 14px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.round-card--highlight .round-topics li i {
+    color: #ffc800;
+}
+
+.round-footer {
+    margin-top: auto;
+    padding-top: 0.8rem;
+    border-top: 1px solid rgba(0, 229, 255, 0.08);
+    font-size: 0.72rem;
+    color: var(--neon-cyan);
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+}
+
+.round-card--highlight .round-footer {
+    border-color: rgba(255, 200, 0, 0.1);
+    color: #ffc800;
+}
+
+/* ============================
+   CAMPUS MAP SECTION
+   ============================ */
+.map-section {
+    background: radial-gradient(ellipse at 50% 100%, rgba(0, 40, 100, 0.08) 0%, transparent 70%);
+}
+
+.map-wrapper {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 229, 255, 0.12);
+    height: 420px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* The blurred placeholder map behind */
+.map-placeholder {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background:
+        linear-gradient(135deg, rgba(8, 20, 60, 0.9) 0%, rgba(3, 5, 15, 0.95) 100%);
+    filter: blur(4px);
+    transform: scale(1.02);
+}
+
+.map-grid-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(0, 229, 255, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 229, 255, 0.06) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+.map-fake-block {
+    position: absolute;
+    background: rgba(0, 229, 255, 0.07);
+    border: 1px solid rgba(0, 229, 255, 0.15);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+    color: rgba(0, 229, 255, 0.4);
+    text-transform: uppercase;
+}
+
+.map-block-a {
+    top: 20%;
+    left: 15%;
+    width: 22%;
+    height: 28%;
+}
+
+.map-block-b {
+    top: 55%;
+    left: 55%;
+    width: 20%;
+    height: 22%;
+}
+
+.map-block-c {
+    top: 25%;
+    left: 55%;
+    width: 28%;
+    height: 20%;
+}
+
+.map-block-d {
+    top: 60%;
+    left: 15%;
+    width: 32%;
+    height: 18%;
+    background: rgba(0, 229, 255, 0.03);
+}
+
+.map-fake-pin {
+    position: absolute;
+    color: rgba(0, 229, 255, 0.5);
+    font-size: 1.2rem;
+    transform: translate(-50%, -100%);
+    animation: mapPinBounce 2s ease-in-out infinite;
+}
+
+.map-fake-pin:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.map-fake-pin:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+@keyframes mapPinBounce {
+
+    0%,
+    100% {
+        transform: translate(-50%, -100%);
+    }
+
+    50% {
+        transform: translate(-50%, -130%);
+    }
+}
+
+/* The blur + lock overlay on top */
+.map-blur-overlay {
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(3, 5, 15, 0.72);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    border-radius: 20px;
+}
+
+.map-lock-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    max-width: 400px;
+}
+
+.map-lock-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: rgba(0, 229, 255, 0.08);
+    border: 2px solid rgba(0, 229, 255, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: var(--neon-cyan);
+    animation: lockPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes lockPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 229, 255, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 0 14px rgba(0, 229, 255, 0);
+    }
+}
+
+.map-lock-content h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    letter-spacing: 1.5px;
+}
+
+.map-lock-content p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.map-lock-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    color: var(--neon-cyan);
+    background: rgba(0, 229, 255, 0.08);
+    border: 1px solid rgba(0, 229, 255, 0.2);
+    border-radius: 20px;
+    padding: 0.4rem 1.1rem;
+    letter-spacing: 0.5px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Responsive for rounds + map */
+@media (max-width: 900px) {
+    .rounds-flow {
+        gap: 0.5rem;
+    }
+
+    .round-arrow {
+        display: none;
+    }
+
+    .round-card {
+        max-width: 100%;
+        flex: 1 1 calc(50% - 1rem);
+    }
+}
+
+@media (max-width: 600px) {
+    .round-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .map-wrapper {
+        height: 320px;
+    }
+
+    .map-lock-content h3 {
+        font-size: 0.95rem;
+    }
+}
+
 /* ---- Tablets Portrait / Large Phones (768px) ---- */
 @media (max-width: 768px) {
 
@@ -2607,6 +3005,27 @@ body {
         min-width: unset;
         width: 100%;
     }
+
+    /* ── Rounds ── */
+    .rounds-flow {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .round-arrow {
+        display: none;
+    }
+
+    .round-card {
+        max-width: 100%;
+        flex: 1 1 auto;
+    }
+
+    /* ── Map ── */
+    .map-wrapper {
+        height: 300px;
+    }
 }
 
 /* ---- Phablets (600px) ---- */
@@ -2639,6 +3058,21 @@ body {
 
     .hero-stats {
         flex-direction: column;
+    }
+
+    /* ── Rounds ── */
+    .round-card {
+        padding: 1.5rem 1.2rem;
+    }
+
+    .round-title {
+        font-size: 0.88rem;
+    }
+
+    /* ── Map ── */
+    .map-wrapper {
+        height: 260px;
+        border-radius: 14px;
     }
 }
 
@@ -2818,6 +3252,41 @@ body {
     .details-layout {
         grid-template-columns: 1fr;
     }
+
+    /* ── Rounds ── */
+    .round-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 1.1rem;
+    }
+
+    .round-number {
+        font-size: 1.9rem;
+    }
+
+    .round-desc {
+        font-size: 0.78rem;
+    }
+
+    /* ── Map ── */
+    .map-wrapper {
+        height: 220px;
+        border-radius: 12px;
+    }
+
+    .map-lock-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.6rem;
+    }
+
+    .map-lock-title {
+        font-size: 1.1rem;
+    }
+
+    .map-lock-desc {
+        font-size: 0.8rem;
+    }
 }
 
 /* ---- Very Small Phones (360px) ---- */
@@ -2900,6 +3369,21 @@ body {
 
     .logo-sub {
         font-size: 0.52rem;
+    }
+
+    /* ── Rounds ── */
+    .round-card {
+        padding: 1.2rem 1rem;
+        border-radius: 12px;
+    }
+
+    .round-topics li {
+        font-size: 0.72rem;
+    }
+
+    /* ── Map ── */
+    .map-wrapper {
+        height: 190px;
     }
 }
 
