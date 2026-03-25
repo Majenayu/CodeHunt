@@ -1,0 +1,22 @@
+{
+  "name": "CodeHunt 2K26",
+  "short_name": "CodeHunt",
+  "description": "National Level Inter-College Competition by CSE AIML, VVCE Mysuru",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#00ff88",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://codehunt-xp1q.onrender.com/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://codehunt-xp1q.onrender.com/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
